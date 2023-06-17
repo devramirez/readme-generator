@@ -14,12 +14,29 @@ const questions = () => {
             name: 'github',
             message: 'What is your GitHub username?',
             validate: nameInput => {
-                if (nameInput) => {
+                if (nameInput) {
                     return true;
                 } else {
                     console.log('Please enter username!');
+                    return false;
                 }
-            }
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'What is your email address?',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter your email address!');
+                        return false; 
+                    }
+                }
+        
+            },
+            
         }
     ])
 }
