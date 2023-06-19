@@ -36,7 +36,22 @@ const questions = () => {
                 }
         
             },
+
+            {
+                type: 'input',
+                name: 'title',
+                message: 'What is your project name?',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter your project name!');
+                        return false; 
+                    }
+                }
+            },
             
+
         }
     ])
 }
