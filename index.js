@@ -149,4 +149,7 @@ const writeFile = data => {
 
 // function call to start program
 questions()
-
+// getting user answers
+.then(answers => {
+    return generatePage(answers)
+})
