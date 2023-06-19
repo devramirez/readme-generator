@@ -65,22 +65,22 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'description',
-            message: 'Please write a short description of your project.',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter a description of your project!');
-                    return false;
-                }
-            }
+            name: 'table of contents',
+            message: 'Table of Contents(optional).',
+            // validate: nameInput => {
+            //     if (nameInput) {
+            //         return true;
+            //     } else {
+            //         console.log('Please enter a description of your project!');
+            //         return false;
+            //     }
+            // }
         },
         {
             type: 'list',
             name: 'license',
             message: 'What kind of license should your project have?',
-            choices: ['MIT', 'GNU'],
+            choices: ['MIT', 'GNU', 'APACHE2.0', 'MPL2.0', 'BSD2', 'BSD3', 'none'],
             default: ["MIT"],
             validate: nameInput => {
                 if (nameInput) {
@@ -107,7 +107,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'How do you use this app?',
+            message: "Provide instructions and examples for use. Include screenshots as needed. To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax: ```md ![alt text](assets/images/screenshot.png)```",
             validate: nameInput => {
                 if (nameInput) {
                     return true;
