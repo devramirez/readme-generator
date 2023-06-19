@@ -130,3 +130,11 @@ const questions = () => {
         }
     ]);
 };
+
+// function to write README file using fs
+
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
+        
+    })
+}
