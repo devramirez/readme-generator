@@ -144,5 +144,9 @@ const writeFile = data => {
         } else {
             console.log('Your README has successfully been created!')
         }
-    })
-}
+    });
+};
+
+// function call to start program
+questions()
+
