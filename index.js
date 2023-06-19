@@ -36,7 +36,6 @@ const questions = () => {
                 }
         
             },
-
             {
                 type: 'input',
                 name: 'title',
@@ -50,8 +49,63 @@ const questions = () => {
                     }
                 }
             },
+    
+            {
+                type: 'input',
+                name: 'description',
+                message: 'Please write a short description of your project.',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter a description of your project!');
+                        return false; 
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'description',
+                message: 'Please write a short description of your project.',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter a description of your project!');
+                        return false; 
+                    }
+                }
+            }, 
+            {
+                type: 'list',
+                name: 'license',
+                message: 'What kind of license should your project have?',
+                choices: ['MIT', 'GNU'],
+                default: ["MIT"],
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please choose a license!');
+                        return false; 
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'install',
+                message: 'What are the steps required to install your project?',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter steps required to install your project!');
+                        return false; 
+                    }
+                }
+            },
             
 
         }
     ])
-}
+};
