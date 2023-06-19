@@ -1,7 +1,7 @@
 // require modules 
 const fs = require('fs');
 const inquirer = require('inquirer');
-
+const path = require('path');
 // linking to page where the README is generated 
 const generatePage = require('./utils/generateMarkdown.js');
 
@@ -152,4 +152,12 @@ questions()
 // getting user answers
 .then(answers => {
     return generatePage(answers)
-})
+});
+// using data to display on page
+.then(data => {
+    return writeFile(data)
+});
+// catch errors
+.catch(err => {
+    console.log(err)
+});
