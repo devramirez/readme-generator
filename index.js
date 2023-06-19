@@ -154,10 +154,10 @@ questions()
     return generatePage(answers)
 });
 // using data to display on page
-.then(data => {
-    return writeFile(data)
-});
-// catch errors
-.catch(err => {
-    console.log(err)
-});
+// .then(data => {
+//     return writeFile(data)
+// });
+// // catch errors
+// .catch(err => {
+//     console.log(err)
+// });
