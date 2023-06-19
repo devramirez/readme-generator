@@ -135,6 +135,14 @@ const questions = () => {
 
 const writeFile = data => {
     fs.writeFile('README.md', data, err => {
-        
+        // conditional statement if there is an error
+        if (err) {
+            console.log(err);
+            return;
+            
+        // console log when README has been created
+        } else {
+            console.log('Your README has successfully been created!')
+        }
     })
 }
