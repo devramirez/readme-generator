@@ -12,7 +12,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'title',
-            message: 'What is your project name?',
+            message: 'What is the title of your project?',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -123,33 +123,20 @@ const questions = () => {
     ]);
 };
 
-// function to write README file using fs
+// function to write README file 
 
-const writeFile = data => {
-    fs.writeFile('README.md', data, err => {
-        // conditional statement if there is an error
-        if (err) {
-            console.log(err);
-            return;
-            
-        // console log when README has been created
-        } else {
-            console.log('Your README has successfully been created!')
-        }
-    });
-};
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
 // function call to start program
-questions()
-// getting user answers
-.then(answers => {
-    return generatePage(answers)
-});
-// using data to display on page
-// .then(data => {
-//     return writeFile(data)
-// });
-// // catch errors
-// .catch(err => {
-//     console.log(err)
-// });
+// TODO: Create a function to initialize app
+function init() {
+    inquirer.prompt(questions).then((response) => {
+    console.log('Generating README.md file...');
+    writeToFile('./dist/README.md', generateMarkdown({...responses}));
+    });
+    }
+    
+    // Function call to initialize app
+    init();
