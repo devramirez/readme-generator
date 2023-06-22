@@ -155,19 +155,3 @@ questions()
 .catch(err => {
     console.log(err)
 })
-
-// function writeToFile(fileName, data) {
-//     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-// }
-
-// // function call to start program
-// // TODO: Create a function to initialize app
-// function init() {
-//     inquirer.prompt(questions).then((response) => {
-//     console.log('Generating README.md file...');
-//     writeToFile('./dist/README.md', generateMarkdown({...responses}));
-//     });
-//     }
-    
-//  // Function call to initialize app
-//  init();
