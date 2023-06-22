@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const path = require('path');
 
 // linking to page where the README is generated 
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./generateMarkdown.js');
 
 //array of questions for user
 const questions = () => {
