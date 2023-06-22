@@ -11,7 +11,7 @@ function renderLicenseBadge(license) {
 function renderLicenseSection(license) {
     if (license){
         return `## License 
-        ${license} license is used for this porject.`;
+        ${license} license is used for this project.`;
     } else {
         return '';
     }

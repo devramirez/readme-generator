@@ -2,13 +2,15 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
+
 // linking to page where the README is generated 
-const generatePage = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 //array of questions for user
 const questions = () => {
     // using inquirer to prompt questions to user
-    return inquirer.prompt([
+    return inquirer
+    .prompt([
         {
             type: 'input',
             name: 'title',
@@ -38,7 +40,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: "Provide instructions and examples for use. Include screenshots as needed. To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax: ```md ![alt text](assets/images/screenshot.png)```",
+            message: "Provide instructions and examples for use. Include screenshots as needed.",
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -125,18 +127,47 @@ const questions = () => {
 
 // function to write README file 
 
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
+        // if there is an error
+        if  (err) {
+            console.log(err)
+            return;
+        
+        // prompt when README has been created 
+        } else {
+            console.log("Your README has been successfully created!")
+        }
+    })
 }
 
-// function call to start program
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then((response) => {
-    console.log('Generating README.md file...');
-    writeToFile('./dist/README.md', generateMarkdown({...responses}));
-    });
-    }
+// function to initialize program
+questions()
+
+// getting answers
+.then(answers =>{
+    return generateMarkdown(answers)
+})
+.then(data =>{
+    return writeFile(data);
+})
+//catching errors
+.catch(err => {
+    console.log(err)
+})
+
+// function writeToFile(fileName, data) {
+//     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+// }
+
+// // function call to start program
+// // TODO: Create a function to initialize app
+// function init() {
+//     inquirer.prompt(questions).then((response) => {
+//     console.log('Generating README.md file...');
+//     writeToFile('./dist/README.md', generateMarkdown({...responses}));
+//     });
+//     }
     
-    // Function call to initialize app
-    init();
+//  // Function call to initialize app
+//  init();
