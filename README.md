@@ -5,7 +5,7 @@ This application was created to generate a high-quality, professional README dep
 ## Deployed Application URL
 https://github.com/devramirez/readme-generator
 ## Screenshot
-![alt-text](undefined)
+![README-GENERATOR](![Untitled_ Jun 21, 2023 10_31 PM](https://github.com/devramirez/readme-generator/assets/45980046/c15ee120-9a2c-48ef-8894-75bf6b8c9ff9)
 ## Table of Contents
 *[Features](#features)
 *[Usage](#usage)
