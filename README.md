@@ -15,14 +15,12 @@ https://github.com/devramirez/readme-generator
 *[GitHub](#user)
 *[Questions](#email)
 ## Features
-undefined
+Features include creating a completed README for any assignment or project.
 ## Usage
 README-SCREENSHOT
-## Dependencies
-undefined
 ## Contributors
-clone repo from Github
+Contributers can be put here for future use
 ## GitHub
-devramirez
+https://www.github.com/devramirez
 ## Questions
 If you have any questions about this project, please direct them [here](mailto:aramirezdev1@gmail.com)
